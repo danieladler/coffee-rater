@@ -1,0 +1,8 @@
+.body-container {
+  @include outer-container;
+
+  .four-column-test {
+    @include span-columns(3);
+    background-color: rgb(200, 200, 200)
+  }
+}
