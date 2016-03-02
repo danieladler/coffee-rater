@@ -1,6 +1,23 @@
 <div class="body-container">
   <h1> KaffiiRater! </h1>
 
+  <table>
+    <th>Name</th>
+    <th>Origin</th>
+    <th>Roast</th>
+    <th>Delete</th>
+    <% @kaffiis.each do |k|  %>
+      <tr>
+        <td> <%= link_to k.name, show_path(k.id) %></td>
+        <td> <%= k.origin %></td>
+        <td> <%= k.roast %></td>
+        <td> [delete] </td>
+      </tr>
+    <% end %>
+    <tr id="create-link"> <%= link_to "Create New Kaffii", create_path%> <tr>
+  </table>
+
+
   <div class="four-column-test">
     <span>first</span>
   </div>
