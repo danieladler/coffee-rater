@@ -38,20 +38,20 @@ RSpec.describe KaffiiController, type: :controller do
       expect(assigns(:kaffii).id).to eq nil
     end
   end
-  #
-  # describe "POST create" do
-  #   it "adds a kaffii to the database" do
-  #     count = Kaffii.count
-  #     post :create, kaffii: {name: "Test", origin: "Iceland", roast: "Very Dark"} # 2nd arg here is params
-  #     expect(Kaffii.count).to eq count + 1
-  #   end
+
+  describe "POST create" do
+    it "adds a kaffii to the database" do
+      count = Kaffii.count
+      post :create, kaffii: {name: "Test", origin: "Iceland", roast: "Very Dark"} # 2nd arg here is params
+      expect(Kaffii.count).to eq count + 1
+    end
   #
   #  # it "redirects to home page" do
   #  #   post :create, kaffii: {name: "second", origin: "Brazil", roast: "Medium"} # 2nd arg here is params
   #  #   expect(response).to redirect_to "/"
   #  #   # ALT: expect(response.location).to eq "/"
   #  # end
-  # end
+  end
 
   # describe "DELETE destroy" do
     # pass in specific kaffii from params

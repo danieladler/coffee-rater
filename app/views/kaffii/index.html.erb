@@ -11,10 +11,16 @@
         <td> <%= link_to k.name, show_path(k.id) %></td>
         <td> <%= k.origin %></td>
         <td> <%= k.roast %></td>
-        <td> [delete] </td>
+        <td>
+          <form action="/delete/<%= k.id %>" method="POST">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" value="Delete" data-confirm:"Are you sure?">
+          </form>
+        </td>
       </tr>
     <% end %>
-    <tr id="create-link"> <%= link_to "Create New Kaffii", create_path%> <tr>
+    <tr id="create-link"> <%= link_to "Create New Kaffii", new_path%> <tr>
   </table>
 
 

@@ -8,11 +8,11 @@ class KaffiiController < ApplicationController
     @kaffii = Kaffii.find(params[:id])
   end
 
-  def create
+  def new
     @kaffii = Kaffii.new
   end
 
-  def add
+  def create
     @kaffii = Kaffii.new
     @kaffii.name = params[:name]
     @kaffii.origin = params[:origin]
@@ -20,8 +20,14 @@ class KaffiiController < ApplicationController
     if @kaffii.save
       redirect_to root_path
     else
-      render :create
+      render :new
     end
+  end
+
+  def delete
+    @kaffii = Kaffii.find(params[:id])
+    @kaffii.destroy
+    redirect_to root_path
   end
 
 end

@@ -2,10 +2,10 @@ Rails.application.routes.draw do
 
   root to: "kaffii#index"
 
-  get "/create", to:"kaffii#create", as: :create
-  get "/:id"   , to:"kaffii#show"  , as: :show
-
-  post "/add"  , to:"kaffii#add"   , as: :add
+  get "/new"      , to:"kaffii#new"         , as: :new
+  get "/:id"      , to:"kaffii#show"        , as: :show
+  post "/create"  , to:"kaffii#create"      , as: :create
+  delete "/delete/:id"   , to:"kaffii#delete"      , as: :delete
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
