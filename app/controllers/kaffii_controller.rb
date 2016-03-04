@@ -16,7 +16,7 @@ class KaffiiController < ApplicationController
     @kaffii = Kaffii.new
     @kaffii.name = params[:name]
     @kaffii.origin = params[:origin]
-    @kaffii.roast = params[:roast]
+    @kaffii.roast = params[:roast].downcase
     if @kaffii.save
       redirect_to root_path
     else

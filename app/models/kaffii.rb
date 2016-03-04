@@ -2,8 +2,6 @@ class Kaffii < ActiveRecord::Base
   has_many :ratings
 
   validates :name, :origin, :roast, presence: true
-  # validates :origin, presence: true
-  # validates :roast, presence: true
 
   # this approach allows for roasts that contain the 3 words but can also contain other words.
   # Regexp.union() is neat – it generates a regex from whatever's passed in!
@@ -16,7 +14,7 @@ class Kaffii < ActiveRecord::Base
   #   message: "roast must be light, medium or dark"}
 
   def rating
-    # Returns a Float of the average of all ratings for this coffee 
+    # Returns a Float of the average of all ratings for this coffee
   end
 
 end
