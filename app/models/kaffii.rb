@@ -13,8 +13,10 @@ class Kaffii < ActiveRecord::Base
   # validates :roast, inclusion: { in: %w(light medium dark),
   #   message: "roast must be light, medium or dark"}
 
-  def rating
+  def average_rating
     # Returns a Float of the average of all ratings for this coffee
+    ratings = Rating.where(kaffii_id: self.id)
+    ratings.average_all.to_f
   end
 
 end
