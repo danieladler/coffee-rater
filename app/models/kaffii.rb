@@ -1,4 +1,5 @@
 class Kaffii < ActiveRecord::Base
+  has_many :ratings
 
   validates :name, :origin, :roast, presence: true
   # validates :origin, presence: true
@@ -13,5 +14,9 @@ class Kaffii < ActiveRecord::Base
   # # this approach validates *strictly* for light medium or dark as the roast
   # validates :roast, inclusion: { in: %w(light medium dark),
   #   message: "roast must be light, medium or dark"}
+
+  def rating
+    # Returns a Float of the average of all ratings for this coffee 
+  end
 
 end
