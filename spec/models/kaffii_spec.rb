@@ -18,5 +18,10 @@ describe Kaffii do
       kaffii.update(roast: nil)
       expect(kaffii.valid?).to eq false
     end
+
+    it "requires roast include one of 'light', 'medium' or 'dark'" do
+      kaffii.update(roast: "murky")
+      expect(kaffii.valid?).to eq false
+    end
   end
 end
