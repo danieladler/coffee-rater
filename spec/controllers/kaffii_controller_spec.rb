@@ -14,7 +14,7 @@ RSpec.describe KaffiiController, type: :controller do
   end
 
   describe "GET show" do
-    let(:kaffii) {Kaffii.create(name:"test", origin: "Oregon", roast:"bland")}
+    let(:kaffii) {Kaffii.create(id: 1, name:"test", origin: "Oregon", roast:"dark")}
 
     it "returns 200" do
       get :show, id: kaffii.id
@@ -27,14 +27,14 @@ RSpec.describe KaffiiController, type: :controller do
     end
   end
 
-  describe "GET create-post form" do
+  describe "GET new" do
     it "returns 200" do
-      get :create
+      get :new
       expect(response.status).to eq 200
     end
 
     it "starts with a new, unsaved instance" do
-      get :create
+      get :new
       expect(assigns(:kaffii).id).to eq nil
     end
   end
@@ -42,7 +42,7 @@ RSpec.describe KaffiiController, type: :controller do
   describe "POST create" do
     it "adds a kaffii to the database" do
       count = Kaffii.count
-      post :create, kaffii: {name: "Test", origin: "Iceland", roast: "Very Dark"} # 2nd arg here is params
+      post :create, kaffii: {name: "test", origin: "Oregon", roast: "dark"} # 2nd arg here is params
       expect(Kaffii.count).to eq count + 1
     end
   #

@@ -2,12 +2,12 @@ Rails.application.routes.draw do
 
   root to: "kaffii#index"
 
-  get "/new"      , to:"kaffii#new"         , as: :new
-  get "/:id"      , to:"kaffii#show"        , as: :show
-  post "/create"  , to:"kaffii#create"      , as: :create
+  get "/new"             , to:"kaffii#new"         , as: :new
+  get "/:id"             , to:"kaffii#show"        , as: :show
+  post "/create"         , to:"kaffii#create"      , as: :create
   delete "/delete/:id"   , to:"kaffii#delete"      , as: :delete
 
-  post "/rate/:id" , to:"ratings#rate" , as: :rate_kaffii
+  post "/rate/:id"       , to:"ratings#rate" , as: :rate_kaffii
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
